@@ -1,0 +1,20 @@
+# Generated Vivado projects and exported hardware images.
+/hardware/vivado/projects/*
+!/hardware/vivado/projects/README.md
+/hardware/artifacts/*
+!/hardware/artifacts/README.md
+
+# Software builds, generated programs, and timestamped experiment outputs.
+/build/*
+!/build/README.md
+/results/*
+!/results/README.md
+
+# Python caches and local virtual environments.
+**/__pycache__/
+*.py[cod]
+/.venv/
+
+# Editor and OS metadata.
+.DS_Store
+*.swp

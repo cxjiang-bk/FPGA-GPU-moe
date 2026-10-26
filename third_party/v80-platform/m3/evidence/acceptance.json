@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "validated_build": "build_20261020_132052_718643",
+  "date": "2026-10-20",
+  "scope": "Historical validated hardware; source packaging/reproducibility changes do not imply a new routed build or board run.",
+  "clocks_MHz": {
+    "ctrl_clk": 100,
+    "core_clk": 75,
+    "mem_axi_clk": 400
+  },
+  "timing": {
+    "WNS_ns": 0.322,
+    "TNS_ns": 0.0,
+    "setup_failing_endpoints": 0,
+    "setup_total_endpoints": 1126218,
+    "WHS_ns": 0.01,
+    "THS_ns": 0.0,
+    "hold_failing_endpoints": 0,
+    "hold_total_endpoints": 1125945,
+    "WPWS_ns": 0.0,
+    "TPWS_ns": 0.0,
+    "pulse_failing_endpoints": 0,
+    "pulse_total_endpoints": 398339
+  },
+  "bus_skew": {
+    "constraints": 37,
+    "min_slack_ns": 1.734,
+    "violations": 0
+  },
+  "cdc": {
+    "cdc15_count": 4396,
+    "by_instance": {
+      "u_lpu_mem_bridge": 2327,
+      "u_rvd_axi_cdc": 1248,
+      "u_rvi_axi_cdc": 592,
+      "u_rvu_axi_cdc": 229
+    },
+    "unmatched_count": 0,
+    "unmatched_examples": [],
+    "critical_rows": 0,
+    "note": "Structural scope only. Review with generated IP constraints, bus skew and datapath timing reports. No waivers applied."
+  },
+  "strict_zero_warning_signoff": false,
+  "images": {
+    "M3.bin": {
+      "bytes": 3916720,
+      "sha256": "6ebe2c917cc49df570fb2f093addba994718a046592b2fe6522b4a68970576f6"
+    },
+    "M3_boot.pdi": {
+      "bytes": 3326864,
+      "sha256": "c65f5fea6d2624c08f4f550118e252ab6a5c45215cb78abaabfede00f013a629"
+    },
+    "M3_pld.pdi": {
+      "bytes": 43977952,
+      "sha256": "c93add49bcd959f030cc0d1f5accd98e92354f95477ff0617abd937bfa3da43c"
+    },
+    "M3.xsa": {
+      "bytes": 104658682,
+      "sha256": "027354cc3c24338725b46ebfe86fc3bc203351c70c78ba59991155a452692675"
+    },
+    "amc.elf": {
+      "bytes": 1834224,
+      "sha256": "0e7199d0a56d9a809e52ba873ca8bcd7c48806d98e63891b1036712482f26980"
+    }
+  },
+  "boot_platform_uuid": "00000000000000000000000014384317",
+  "qdma_hbm_loopback": {
+    "passed": true,
+    "sizes": [
+      4096,
+      1048576
+    ],
+    "address": "0x4000100000",
+    "evidence": "deploy_20261019/qdma_hbm_20261020_165745_EckUJk/console.log"
+  },
+  "rmsnorm": {
+    "passed": true,
+    "elf_sha256": "6a3290a856943381ea72ebde36f6c4d381a232f4a2e59959a3ba99ff8579c1a8",
+    "input_sha256": "e51e786327d6d2356be93edb4992e378c52b711e582feef4324746bd015ab64a",
+    "golden_sha256": "4c4a6e5774636cd2721d2716bf0ec8cea5ec87aa562da0d9a128d815eca0b090",
+    "last_status": "0x3",
+    "mailbox_after": [
+      0,
+      1,
+      8,
+      0,
+      1
+    ],
+    "comparison": {
+      "pass": true,
+      "mean_relative_error": 0.0,
+      "mean_relative_error_limit": 0.01,
+      "max_relative_error": 0.0,
+      "relative_error_ge_5pct_count": 0,
+      "nonfinite_count": 0,
+      "bf16_bit_mismatch_count": 0,
+      "elements": 8192
+    },
+    "evidence": "host_runs/rmsnorm_20261020_165802/result.json"
+  },
+  "source_boundary": "Canonical design/ and include/ files were unchanged; final BD source includes PF1 BAR2 AXCACHE=0."
+}

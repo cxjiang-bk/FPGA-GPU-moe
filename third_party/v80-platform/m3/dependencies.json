@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "vivado_version": "2026.1",
+  "part": "xcv80-lsva4737-2MHP-e-S",
+  "board_part": "xilinx.com:v80:part0:2.0",
+  "operators_commit": "a69d89dcee0521ab2852daae839124ae02d4d1a0",
+  "vllm_reference_commit": "172d8e2ddbdc43762c1f223c459c114bfb9a0a06",
+  "pymodel_fixture_commit": "4eb0db5d71949cb7028f8148d3ea59395334a0d6",
+  "amr_vivado_designs_commit": "4b7d244758c683ec4c45f357e65511c25cff8f38",
+  "amr_platform": "fpga/v80/amr-alveo_v80_gen5x8_26.1_20260609/build_v80_pld_20261010/amr_vivado_designs/alveo_v80/platforms/v80_base",
+  "toolchain": {
+    "compiler": "riscv64-unknown-elf-gcc",
+    "validated_version": "13.2.0",
+    "march": "rv32im",
+    "mabi": "ilp32",
+    "optimization": "O2"
+  },
+  "fixture": {
+    "case": "stage1/rmsnorm_smoke/case.json",
+    "generator": "unit_test/rvcore_lpu_test/tools/run_operator_case.py --prepare-only",
+    "input_sha256": "e51e786327d6d2356be93edb4992e378c52b711e582feef4324746bd015ab64a",
+    "golden_sha256": "4c4a6e5774636cd2721d2716bf0ec8cea5ec87aa562da0d9a128d815eca0b090"
+  }
+}

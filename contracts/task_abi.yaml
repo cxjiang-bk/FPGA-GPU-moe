@@ -1,0 +1,10 @@
+schema_version: 1
+mode: single_inflight_register_submission
+identity: {task_id_bits: 64, epoch_bits: 32}
+arguments: {count: 8, element_bits: 32, registers: R8_to_R15}
+submission: "Idle and quiescent; clear previous status; program address/count and arguments; CMD_RUN"
+completion: "STATUS_DONE and matching DONE_ID/DONE_EPOCH; ERROR==0 for success; core halted and all memory requests/responses drained"
+abort: "Hold core reset; drain accepted AXI traffic; publish failure; advance epoch"
+timeout: "Count total loader/execution cycles; hold core reset and drain; unresolved external AXI transaction leaves BUSY set with ERROR"
+buffers: "Keep program, weights, input and output alive until completion or platform recovery"
+interrupt_backend: deferred_until_matching_M4_delivery

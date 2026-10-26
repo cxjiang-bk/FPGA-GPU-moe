@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "completed_at": "2026-10-26T14:22:44.783361+08:00",
+  "scope": "Offline compute/AXI/control/Host regression, OOC synthesis and platform BD/IP generation",
+  "branch": "feature/v80-smoke",
+  "board_access": false,
+  "driver_or_queue_changes": false,
+  "dependency_lock_sha256": "bb2dd4177970438acc38e568075518dda8b7df0d6c934385f05a8831f83ff00d",
+  "offline_manifest": "results/offline-20261026-135508/manifest.json",
+  "offline_manifest_sha256": "4e171e8314632da357bd3e3a82b1b787c88a86848226dceb05282bf94884c343",
+  "ooc_manifest": "hardware/vivado/projects/v80_smoke/ooc-20261026-135819-654982/manifest.json",
+  "ooc_manifest_sha256": "6d7dd9289c24ea4c65ea8fdbadfaf05cd2ac9b6e5d7d26bac698bdd7cc7d7484",
+  "bd_manifest": "hardware/vivado/projects/v80_smoke/check-20261026-141659-770943/manifest.json",
+  "bd_manifest_sha256": "53235e7932f3de89c6e21fcb2e938726e4110dada58528743eeddac3c3ce685d",
+  "bridge_checks_per_seed": 63,
+  "bridge_seeds": [
+    23,
+    117,
+    2026
+  ],
+  "host_driver_checks": 17,
+  "cases_reproducible": true,
+  "all_initialized_memory_bit_exact": true,
+  "routed": false,
+  "image_packaged": false,
+  "board_tested": false,
+  "tools": {
+    "cmake": "cmake version 3.28.3",
+    "cxx": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "artifacts_sha256": {
+    "build/host/libv80_driver.a": "93c3278b734532730447ceba47047b48cf27ed07e1329a105c467600ab259554",
+    "build/host/v80-smoke": "ff1b3f296327b9ddcd0799114ecc92bf5a3dbfa07cb8933353ac2ac308e2f26a",
+    "build/host/v80-info": "6c6125640db4d4fe88553846426a038b55f7e5b6745cc8dea16b74e14983cdc0",
+    "hardware/vivado/projects/v80_smoke/ooc-20261026-135819-654982/v80_opentpu_ooc.dcp": "f0cf7e4fdf5bbc32e95514e8ebe3b1779aea2ef69dd4a661850dc3cdc15dffaf",
+    "hardware/vivado/projects/v80_smoke/ooc-20261026-135819-654982/reports/utilization.rpt": "eec5992ef4c27e3909c3605d7df23849e29ee6e680805cf0bba39a4fa4b8b12c",
+    "hardware/vivado/projects/v80_smoke/check-20261026-141659-770943/reports/bd_audit.txt": "88f0c0c3a2d36123bee437c0bb15d7ddc3a89e5b4b0259137ce8263d66aff9f0"
+  },
+  "failed_builds": [
+    "hardware/vivado/projects/v80_smoke/check-20261026-135532-395396/failure.txt",
+    "hardware/vivado/projects/v80_smoke/check-20261026-141014-757150/failure.txt",
+    "hardware/vivado/projects/v80_smoke/check-20261026-141432-119981/failure.txt"
+  ]
+}

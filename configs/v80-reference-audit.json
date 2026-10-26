@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-10-26T13:12:40+08:00",
+  "scope": "Read-only review of the provided M3 source and the V80 bring-up document. This is not a complete build-input lock or a new board acceptance record.",
+  "project_root": "/mnt/data/jiangcx/FPGA-GPU-moe",
+  "decision": {
+    "confirmed_by_user": true,
+    "user_logic": "Replace LPU/RVCore with one openTPU slice",
+    "reuse": ["AMR", "QDMA", "NoC", "HBM", "clock/reset structure"],
+    "initial_completion": "polling",
+    "initial_transport": "GPU to Host staging to QDMA to V80"
+  },
+  "document": {
+    "url": "https://tju-opentpu.feishu.cn/wiki/WpVIwEqhdi06PLkKFe4c47XUn3d?from=from_copylink",
+    "document_id": "Xp76dsSRpo7MjexAMmYcyVzwnaf",
+    "revision_id": 1066,
+    "includes_m4_irq_acceptance": true
+  },
+  "local_reference": {
+    "repository": "/mnt/data/jiangcx/v80_bringup/rtl",
+    "head": "abe224cc2802285414de20492b94041bd56d6704",
+    "commit_date": "2026-10-21T20:45:34+08:00",
+    "commit_subject": "M3",
+    "integration_path": "fpga/v80/m3_lpumem",
+    "full_worktree_diff_verified": false,
+    "source_check": {
+      "command": "python3 /mnt/data/jiangcx/v80_bringup/rtl/fpga/v80/m3_lpumem/scripts/verify_sources.py",
+      "exit_code": 0,
+      "output": "SOURCE_CHECK_PASS protected=196 historical_artifacts=0"
+    },
+    "limitations": [
+      "fpga/v80/m2_mem and fpga/v80/licenses are not readable by the current account",
+      "M3 fixed RMSNorm fixture files are mode 0600 under another owner",
+      "Historical image hashes were read from acceptance.json; image bytes were not rehashed",
+      "The provided fpga/v80 directory has M3 source but no M4 source directory",
+      "Current live board identity, image, queues and kernel driver were not tested in this review"
+    ],
+    "files_sha256_relative_to_repository": {
+      "fpga/v80/m3_lpumem/dependencies.json": "cdc213929beb7f8c6359d5e5e0c9788fdf321db0f60e386cbf14f801772139da",
+      "fpga/v80/m3_lpumem/source_manifest.json": "369db848cc304d53bcb5575fea4c9c4d8d157c75179c9d3041f7abb6be673c7c",
+      "fpga/v80/m3_lpumem/README.md": "1de2c2c5b008ecfc53966fc2c4d2ce0a23f772fdf308c5258c0c2ba6326d193b",
+      "fpga/v80/m3_lpumem/stage2/package_m3.tcl": "87e71ccdde90a5cb979472306df27e97999afa097f78f69a4cea84d5e583c4aa",
+      "fpga/v80/m3_lpumem/stage3/m3_lpumem_export.tcl": "52312afcef492578aaeb87187ab384d601263c3701aa697506c6f54ab82d2a75",
+      "fpga/v80/m3_lpumem/stage6_impl/configure_bar2.tcl": "0ac56d70ffd8bb7d5932775f50a230f6aa299226c0e406529758b63ae43ae088",
+      "fpga/v80/m3_lpumem/evidence/acceptance.json": "3fd4c4a0ecf7810ff281da366ecb57bb1cc24df23a565dcaee324cf162f18d2f"
+    }
+  },
+  "opentpu": {
+    "repository": "https://github.com/FeSens/openTPU",
+    "starting_commit": "506e81b1d297e22739dab5ecaeee684493d5c720",
+    "starting_shape": {"S": 1, "D": 128, "MCOLS": 4},
+    "local_checkout_present": false,
+    "v80_target_frozen": false,
+    "initial_tmem_policy": "Evaluate a supported non-pumped TMEM configuration, validate derived settings, and freeze after simulation and resource checks"
+  },
+  "m3_platform_from_source": {
+    "part": "xcv80-lsva4737-2MHP-e-S",
+    "board_part": "xilinx.com:v80:part0:2.0",
+    "vivado_vitis": "2026.1",
+    "amr_vivado_designs_commit": "4b7d244758c683ec4c45f357e65511c25cff8f38",
+    "clocks_MHz": {"control": 100, "core": 75, "memory_axi": 400},
+    "core_logical_address_bits": 32,
+    "shared_core_window_bytes": 4294967296,
+    "physical_base": "0x4000000000",
+    "physical_end_inclusive": "0x40ffffffff",
+    "core_hbm_windows": ["HBM0_PC0", "HBM0_PC1", "HBM1_PC0", "HBM1_PC1"],
+    "control_bar": "PF1 BAR2",
+    "required_cpm_property": {"CPM_PCIE1_PF1_BAR2_QDMA_AXCACHE": 0}
+  },
+  "m3_historical_acceptance": {
+    "source_file": "fpga/v80/m3_lpumem/evidence/acceptance.json",
+    "build": "build_20261020_132052_718643",
+    "boot_platform_uuid": "00000000000000000000000014384317",
+    "WNS_ns": 0.322,
+    "WHS_ns": 0.01,
+    "hbm_loopback_passed": true,
+    "rmsnorm_bf16_bit_mismatches": 0,
+    "rmsnorm_elements": 8192,
+    "M3_pld_bytes": 43977952
+  },
+  "m4_from_document_only": {
+    "local_source_snapshot_available": false,
+    "driver": "candidate004 with user ISR and sysfs POLLPRI notification",
+    "source_entry": "/home/lugh/lugh/rtl/fpga/v80/m4_interrupt/host/accept_irq.py",
+    "image_delivery": "/home/lugh/lugh/V80_RUNS/20261024/M4_IMAGE_PACKAGE_FIX_019/delivery/",
+    "acceptance_archive": "/home/lugh/lugh/V80_RUNS/20261025/M4_ACCEPTANCE_ARCHIVE_013/",
+    "boot_platform_uuid": "000000000000000000000000c52ced29",
+    "irq_bar2_offset": "0x40000",
+    "note": "Reacquire matching M4 source, driver patches and image manifest before implementing this backend; rediscover actual device identity at deployment."
+  },
+  "actions_in_this_review": {
+    "reference_source_modified": false,
+    "vivado_build_run": false,
+    "image_loaded": false,
+    "kernel_driver_changed": false,
+    "queues_changed": false
+  }
+}

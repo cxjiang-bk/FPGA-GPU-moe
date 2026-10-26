@@ -1,0 +1,52 @@
+schema_version: 1
+byte_order: little
+bar: 2
+window_offset: 0x10000
+window_bytes: 4096
+constants:
+  DEVICE_ID: 0x56383031
+  ABI_VERSION: 1
+  CMD_RUN: 1
+  CMD_ABORT: 2
+  CMD_CLEAR: 4
+  CMD_RESET: 8
+  ERR_TIMEOUT: 0x1001
+  ERR_ABORT: 0x1002
+  ERR_CORE: 0x1003
+  STATUS_BUSY: 1
+  STATUS_DONE: 2
+  STATUS_ERROR: 4
+registers:
+  ID: {offset: 0x00, access: ro}
+  ABI: {offset: 0x04, access: ro}
+  CFG_HASH: {offset: 0x08, access: ro}
+  PLATFORM: {offset: 0x0c, access: ro}
+  STATUS: {offset: 0x10, access: ro}
+  DONE_ID_LO: {offset: 0x14, access: ro}
+  DONE_ID_HI: {offset: 0x18, access: ro}
+  EPOCH: {offset: 0x1c, access: ro}
+  TASK_ID_LO: {offset: 0x20, access: rw_idle}
+  TASK_ID_HI: {offset: 0x24, access: rw_idle}
+  PROGRAM_ADDR: {offset: 0x28, access: rw_idle, unit: byte}
+  PROGRAM_COUNT: {offset: 0x2c, access: rw_idle, unit: instruction}
+  TIMEOUT_CYCLES: {offset: 0x30, access: rw_idle}
+  COMMAND: {offset: 0x34, access: wo}
+  ERROR: {offset: 0x38, access: ro}
+  TOTAL_CYCLES_LO: {offset: 0x3c, access: ro}
+  TOTAL_CYCLES_HI: {offset: 0x40, access: ro}
+  READ_BYTES_LO: {offset: 0x44, access: ro}
+  READ_BYTES_HI: {offset: 0x48, access: ro}
+  WRITE_BYTES_LO: {offset: 0x4c, access: ro}
+  WRITE_BYTES_HI: {offset: 0x50, access: ro}
+  ICOUNT: {offset: 0x54, access: ro}
+  DONE_EPOCH: {offset: 0x58, access: ro}
+  EXEC_CYCLES_LO: {offset: 0x5c, access: ro}
+  EXEC_CYCLES_HI: {offset: 0x60, access: ro}
+  ARG0: {offset: 0x80, access: rw_idle}
+  ARG1: {offset: 0x84, access: rw_idle}
+  ARG2: {offset: 0x88, access: rw_idle}
+  ARG3: {offset: 0x8c, access: rw_idle}
+  ARG4: {offset: 0x90, access: rw_idle}
+  ARG5: {offset: 0x94, access: rw_idle}
+  ARG6: {offset: 0x98, access: rw_idle}
+  ARG7: {offset: 0x9c, access: rw_idle}

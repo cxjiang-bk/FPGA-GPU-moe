@@ -1,0 +1,12 @@
+schema_version: 1
+byte_order: little
+instruction_words: 8
+word_bytes: 4
+instruction_bytes: 32
+program_alignment: 128
+program_count_unit: instruction
+padding: "Zero-pad the native instruction binary to 128 bytes; PROGRAM_COUNT excludes padding"
+configuration: "cfg_hash from upstream target.arch_hash, plus program/case SHA256"
+seq_wc: false
+waitc_sidecar: "Unsupported in v80_smoke; enabling it requires a new config hash and loader tests"
+format: "program.bin plus JSON metadata; no ELF header"

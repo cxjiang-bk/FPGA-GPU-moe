@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "opentpu": {
+    "url": "https://github.com/FeSens/openTPU.git",
+    "commit": "506e81b1d297e22739dab5ecaeee684493d5c720",
+    "license": "Apache-2.0"
+  },
+  "platform": {
+    "source_commit": "abe224cc2802285414de20492b94041bd56d6704",
+    "snapshot_manifest_sha256": "c69741203b4a0e42de0bb623df8447058167e0a0a2dad404221c722a5d5ad014",
+    "files": 40
+  },
+  "target_sha256": "3937c5470375538ca6de9ba2e4b2abf664a90f48e9d987834ebf6840c806c52b",
+  "contracts_sha256": {
+    "contracts/memory_map.yaml": "335d4774753b706a2fb0ab0def78bf0125ed797b493243fc6cd5a639075adfa9",
+    "contracts/program_image.yaml": "f7b979ee8c7c80e30c65f837f145927cc918d426fa2f3ba684696e9b7bc13fb6",
+    "contracts/registers.yaml": "6827a412429dbab551fc19a5100513eb96c40bc67305da651ee00e81028d2883",
+    "contracts/task_abi.yaml": "885c4a60bffaa29f9d6ce69dffab7b0c665c32ed9a0ab6e5fb8caf1b3cc6c8f8"
+  },
+  "python_version": "3.13.12",
+  "packages": {
+    "numpy": "2.4.3",
+    "pytest": "9.0.2",
+    "PyYAML": "6.0.3",
+    "verilator": "5.48.0"
+  },
+  "verilator_binary_sha256": "7a308fe7b00607f3140fe0599efc107a3f591e631a44a1c3614e00e6c90c0dcc"
+}

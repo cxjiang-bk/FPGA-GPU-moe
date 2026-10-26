@@ -1,0 +1,3 @@
+[submodule "third_party/openTPU"]
+	path = third_party/openTPU
+	url = https://github.com/FeSens/openTPU.git

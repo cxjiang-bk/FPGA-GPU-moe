@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# The pinned PyPI distribution exposes verilator-cli. Prefer it in the project venv.
+set -euo pipefail
+v80_root=$(cd -- "$(dirname -- "$0")/../../.." && pwd)
+v80_verilator_root=$("$v80_root/.venv/bin/python" -c 'import pathlib,verilator; print(pathlib.Path(verilator.__file__).parent)')
+export VERILATOR_ROOT="$v80_verilator_root"
+# The wheel ships blank compiler-detection fields; specify GCC's PCH include spelling.
+exec "$v80_verilator_root/bin/verilator" -CFLAGS '-std=c++20 -DVL_TIME_CONTEXT' \
+  -MAKEFLAGS 'CFG_CXXFLAGS_PCH_I=-include' "$@"

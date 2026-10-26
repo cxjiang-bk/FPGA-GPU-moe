@@ -1,0 +1,11 @@
+schema_version: 1
+core_byte_address_bits: 32
+native_port_address_unit_bytes: 4
+physical_base: 0x4000000000
+shared_window_bytes: 4294967296
+allocation_alignment: 128
+windows:
+  - {logical_base: 0x00000000, bytes: 1073741824, hbm: HBM0_PC0}
+  - {logical_base: 0x40000000, bytes: 1073741824, hbm: HBM0_PC1}
+  - {logical_base: 0x80000000, bytes: 1073741824, hbm: HBM1_PC0}
+  - {logical_base: 0xc0000000, bytes: 1073741824, hbm: HBM1_PC1}
